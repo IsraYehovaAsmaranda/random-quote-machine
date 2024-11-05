@@ -11,14 +11,16 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Allow unsecure Node.js versions
+        run: echo "ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true" >> $GITHUB_ENV
+
       - name: Checkout repo
         uses: actions/checkout@v3
 
-      - name: Set environment variable to allow insecure Node version
-        run: echo "ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION=true" >> $GITHUB_ENV
-
       - name: Setup Node
         uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
 
       - name: Install dependencies
         uses: bahmutov/npm-install@v1
