@@ -1,4 +1,4 @@
-import Quotes from "./features/quotes";
+import Quotes from "./features/Quotes";
 import React from "react";
 import { Provider } from "react-redux";
 import { connect } from "react-redux";
